@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.game.GameFragment">
+
+    <data>
+
+        <variable
+            name="game"
+            type="seifemadhamdy.androidtrivia.ui.game.GameFragment" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/question_app_compat_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/vertical_margin"
+                android:scaleType="centerInside"
+                android:src="@drawable/android_category_simple"
+                app:layout_constraintBottom_toTopOf="@+id/question_material_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/question_material_text_view"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginTop="@dimen/double_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:text="@{game.currentQuestion.text}"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_app_compat_image_view"
+                tools:text="What color is the Android mascot?" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/vertical_margin"
+                android:layout_marginBottom="@dimen/double_margin"
+                app:layout_constraintBottom_toTopOf="@+id/submit_material_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_material_text_view"
+                app:layout_constraintVertical_bias="0.0">
+
+                <RadioGroup
+                    android:id="@+id/question_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/vertical_margin"
+                    android:animateLayoutChanges="true">
+
+                    <RadioButton
+                        android:id="@+id/first_answer_radio_button"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/question_vertical_margin"
+                        android:checked="true"
+                        android:text="@{game.answers[0]}"
+                        tools:text="Blue" />
+
+                    <RadioButton
+                        android:id="@+id/second_answer_radio_button"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/question_vertical_margin"
+                        android:text="@{game.answers[1]}"
+                        tools:text="Green" />
+
+                    <RadioButton
+                        android:id="@+id/third_answer_radio_button"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/question_vertical_margin"
+                        android:text="@{game.answers[2]}"
+                        tools:text="Yellow" />
+
+                    <RadioButton
+                        android:id="@+id/fourth_answer_radio_button"
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{game.answers[3]}"
+                        tools:text="Red" />
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submit_material_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/vertical_margin"
+                android:text="@string/submit_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

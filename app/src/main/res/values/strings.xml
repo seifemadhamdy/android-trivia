@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Android Trivia</string>
+    <string name="trivia_over">Trivia Over</string>
+    <string name="trivia_won">Trivia Won</string>
+    <string name="retry">Retry</string>
+    <string name="about_text">Android Trivia will help you learn some of the most important concepts in Android development and jogg your memory about the previously-learnt topics.</string>
+    <string name="rules_text">After starting the trivia, Select an answer from the available ones. When you get an answer correct, you advance to the next question. If you answer wrong, the trivia ends.</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
+    <string name="title_android_trivia_question">Question %1$d of %2$d</string>
+    <string name="share_success_text">I mastered #AndroidTrivia with %1$d/%2$d correct questions!</string>
+    <string name="submit_button">Submit</string>
+    <string name="share">Share</string>
+    <string name="start_text">Test your knowledge on some of the most important concepts in Android development.</string>
+    <string name="start">Start</string>
+    <string name="retry_text">Don\'t be sad! You will get it the next time.</string>
+    <string name="retake_text">Congratulations! You can retake the trivia if you like.</string>
+    <string name="retake">Retake</string>
+</resources>
